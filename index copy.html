@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sam_Photography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-icons/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css"> -->
+    <style>
+
+
+
+/* General Navbar Styles */
+.navbar {
+    font-size: 1.125rem;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    background-color: #FCECCC !important;
+    color: #2B3136 !important;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-family: serif !important;
+    font-weight: 600;
+    font-style: italic;
+    color: #2B3136 !important;
+}
+
+.nav-item {
+    font-family: "Nunito Sans", serif !important;
+    color: #2B3136 !important;
+}
+.navbar .nav-link{
+    color: #2B3136 !important;
+    font-weight: 600;
+    font-family: "Nunito Sans", serif !important;
+}
+.navbar .nav-link.active{
+    color: #007bff !important;
+    font-weight: 600;
+    font-family: "Nunito Sans", serif !important;
+}
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.25rem;
+    width: 1.5rem;
+}
+
+.navbar-toggler-icon div {
+    height: 2px;
+    width: 100%;
+    background-color: white;
+}
+
+.searchBar {
+    max-width: 30rem;
+    width: 25rem;
+}
+
+
+/* Hover Dropdown Menu */
+.hover-dropdown {
+    position: relative; /* Allow the dropdown to be positioned relative to the parent */
+}
+
+.hover-dropdown:hover > .dropdown-menu {
+    display: block; /* Show the dropdown on hover */
+}
+
+.dropdown-menu {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    top: 100%; /* Position the dropdown below the menu item */
+    left: 0;
+    background-color: #FCECCC !important;
+    z-index: 1000;
+    width: fit-content; /* Set a fixed width for the dropdown */
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+}
+
+.dropdown-item {
+    color: #2B3136 !important;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #2B3136 !important;
+    color: #FCECCC !important;
+}
+
+
+
+/* Responsive Styles for Dropdown on Smaller Screens */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: #343a40;
+        z-index: 1050;
+        overflow-y: auto;
+        padding: 1rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+}
+
+
+/* footer  */
+.footer {
+    background-color: #FCECCC;
+    color: #2B3136;
+    padding: 60px 20px 40px;
+}
+
+.footer .logo {
+    max-width: 100%;
+    height: 100px;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer h5 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #2B3136;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #72B5D9;
+}
+
+.footer .social-links {
+    margin-top: 20px;
+    text-align: start;
+}
+
+.footer .social-links a {
+    color: #2B3136;
+    font-size: 17px; 
+    margin: 0 10px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 35px; 
+    height: 35px; 
+    line-height: 35px; 
+    text-align: center; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    background-color: #72B5D9; /* Hover background color */
+    color: white;
+}
+
+.footer .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #7e8183;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: start;
+    }
+    .footer .social-links {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Service links hover animation */
+.footer .services-links a {
+    display: block;
+    padding: 5px 0;
+    transition: padding-left 0.3s ease;
+}
+
+.footer .services-links a:hover {
+    padding-left: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", serif !important;
+    box-sizing: border-box;
+}
+
+
+                    /* Carousel css */
+
+  .carousel{
+    top: 5rem;
+  }
+ /* Set carousel images to full width and fixed height */
+ .carousel-item img {
+    width: 100%;
+    height: 580px;
+    background-size: cover;
+    object-fit: cover; 
+}
+
+/* Hide carousel indicators */
+.carousel-indicators {
+    display: none;
+}
+
+/* Caption Styling */
+.carousel-caption h5 {
+    display: block;
+    font-size: 1.5rem; 
+    font-weight: 600;
+    font-family: serif !important;
+    font-style: italic;
+}  
+
+.carousel-caption h2 {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: serif !important;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.carousel-caption p {
+    font-size: 1.25rem; 
+    font-weight: 300;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Ensure responsive behavior */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 2rem; 
+    }
+}
+
+
+.about-us {
+    padding: 8rem 0;
+    background-color: #f9f9f9;
+  }
+  
+  .about-us h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .about-us .lead {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .about-us img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .about-us h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  
+  .about-us-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .about-card {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .about-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 1rem;
+  }
+  
+  .about-card p {
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .about-us h2 {
+      font-size: 2rem;
+    }
+    .about-us .lead {
+      font-size: 1rem;
+    }
+    .about-card {
+      padding: 1.5rem;
+    }
+  }
+  
+
+
+  /* Services Section */
+.services-section {
+    padding: 2rem 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.service-card {
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.service-card h4 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 20px;
+    }
+}
+
+
+                   /* gallery */
+
+.category-button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.category-button:hover {
+    background-color: #0056b3;
+}
+
+.category-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .category-button {
+        font-size: 1rem;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+.gallery-section {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <!-- Navbar Header: Logo and Toggler -->
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand text-white" href="./index.html">Sam_Photography</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Search Bar (Desktop Only) -->
+            <form class="d-none d-lg-flex mx-auto me-4" role="search">
+                <input class="form-control me-2 searchBar" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex d-lg-none justify-content-between align-items-center mb-3">
+                    <a class="navbar-brand text-white" href="#">Sam_Photography</a>
+                    <button class="btn-close btn-close-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-label="Close"></button>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./about.html">About</a>
+                    </li>
+
+                    <!-- Gallery Dropdown (Hover to show sub-menu) -->
+                    <li class="nav-item dropdown hover-dropdown">
+                        <a class="nav-link text-white" href="./gallery.html" role="button">
+                            Gallery
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Wedding Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Event Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Wildlife Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Fashion Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Food Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Sport Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Travel Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Architectural Photography</a></li>
+                            <li><a class="dropdown-item" href="#">Night Photography</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Services Dropdown (Hover to show sub-menu) -->
+                    <li class="nav-item dropdown hover-dropdown">
+                        <a class="nav-link text-white" href="./services.html" role="button">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Wedding Service</a></li>
+                            <li><a class="dropdown-item" href="#">Event Service</a></li>
+                            <li><a class="dropdown-item" href="#">Wildlife Service</a></li>
+                            <li><a class="dropdown-item" href="#">Fashion Service</a></li>
+                            <li><a class="dropdown-item" href="#">Food Service</a></li>
+                            <li><a class="dropdown-item" href="#">Sport Service</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Carousel Section -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/images/2.png.jpg" class="img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Photography</h5>
+                    <h2>"Capturing Moments, Creating Memories"</h2>
+                    <p>"Every frame tells a story with Sam Photography."</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/images/1.png.jpg" class="img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Photography</h5>
+                    <h2>"Capturing Moments, Creating Memories"</h2>
+                    <p>"Every frame tells a story with Sam Photography."</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/images/3.png.jpg" class="img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Photography</h5>
+                    <h2>"Capturing Moments, Creating Memories"</h2>
+                    <p>"Every frame tells a story with Sam Photography."</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2>About Us</h2>
+                    <p class="lead">
+                        We are a passionate team of photographers dedicated to capturing life's most beautiful moments.
+                        From weddings to portraits, our team ensures every photo tells a story.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="./assets/images/myimg.png" alt="About Us Image" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h2>Why Choose Us?</h2>
+                    <p>
+                        At <strong>Sam Photography</strong>, we pride ourselves on capturing the beauty of every moment
+                        with precision and creativity. With years of professional experience, we transform fleeting
+                        memories into timeless masterpieces. Here's what sets us apart:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <h3>Experienced Professionals</h3>
+                            <p>
+                                Our team consists of seasoned photographers and visual artists specializing in various
+                                styles, including portrait, wedding, event, and commercial photography.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Client-Centric Approach</h3>
+                            <p>
+                                Your vision is our priority. We ensure the final product reflects your unique story and
+                                personality.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Cutting-Edge Equipment</h3>
+                            <p>
+                                We use state-of-the-art cameras and lighting tools to deliver high-quality images for
+                                both digital and print.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="about-card shadow-sm p-4">
+                        <i class="bi bi-camera about-us-icon"></i>
+                        <h5>Professional Photographers</h5>
+                        <p>
+                            Certified and experienced photographers who know how to capture the best moments.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card shadow-sm p-4">
+                        <i class="bi bi-heart about-us-icon"></i>
+                        <h5>Passion for Photography</h5>
+                        <p>
+                            We love what we do, and it reflects in the quality of our work. Your moments are captured
+                            with care and love.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card shadow-sm p-4">
+                        <i class="bi bi-people about-us-icon"></i>
+                        <h5>Client-Centric Approach</h5>
+                        <p>
+                            We focus on your needs, ensuring that every shot is exactly what you envisioned.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <div class="container">
+            <h2 class="services-title">Our Photography Services</h2>
+            <div class="row">
+                <!-- Card for Weddings -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-camera"></i>
+                        </div>
+                        <h4>Weddings</h4>
+                        <p>We specialize in capturing the magic of your special day, from candid moments to elegant
+                            portraits. Let us make your wedding memories last forever.</p>
+                    </a>
+                </div>
+                <!-- Card for Portraits -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4>Portraits</h4>
+                        <p>Whether you need a professional headshot or a creative portrait, we provide high-quality
+                            photography to showcase your best self.</p>
+                    </a>
+                </div>
+                <!-- Card for Events -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-image"></i>
+                        </div>
+                        <h4>Events</h4>
+                        <p>From corporate events to private parties, we capture every important detail of your event,
+                            ensuring your memories are preserved beautifully.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Card for Videography -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-camera-reels"></i>
+                        </div>
+                        <h4>Videography</h4>
+                        <p>We offer professional videography services to complement our photography, ensuring that every
+                            moment is captured in motion.</p>
+                    </a>
+                </div>
+                <!-- Card for Engagement Shoots -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h4>Engagement Shoots</h4>
+                        <p>Celebrate your love with an engagement shoot that captures the essence of your relationship,
+                            providing timeless photos you'll cherish forever.</p>
+                    </a>
+                </div>
+                <!-- Card for Photo Editing -->
+                <div class="col-md-4 mb-4">
+                    <a href="./services.html" class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                        <h4>Photo Editing</h4>
+                        <p>Our editing team enhances your photos to perfection, bringing out the best in every shot and
+                            creating stunning final results.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gallery-section">
+        <div class="container">
+            <h2>Explore Our Photography Collection</h2>
+
+            <!-- Category Buttons -->
+            <div class="category-buttons-container">
+                <button class="category-button" onclick="openGallery('wildlife')">Wildlife</button>
+                <button class="category-button" onclick="openGallery('street')">Street</button>
+                <button class="category-button" onclick="openGallery('food')">Food</button>
+                <button class="category-button" onclick="openGallery('travel')">Travel</button>
+                <button class="category-button" onclick="openGallery('all')">All Photography</button>
+            </div>
+
+            <!-- More Button to Open Gallery Page -->
+            <div class="text-center mt-4">
+                <button class="category-button" onclick="window.location.href = 'gallery.html';">More</button>
+            </div>
+
+            <!-- Placeholder Images Display -->
+            <div id="gallery-display" class="gallery-container mt-4">
+                <!-- Images will load here based on the selected category -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Description -->
+                <div class="col-md-3 col-sm-12">
+                    <img src="./assets/images/logo_sam.png" alt="Sam Photography Logo" class="logo">
+                    <p class="text-center">Your memories deserve to be captured perfectly. Sam Photography offers
+                        professional services to make your moments unforgettable.</p>
+                </div>
+
+                <!-- Quick Links (Services) -->
+                <div class="col-md-3 col-sm-12">
+                    <h5>Services</h5>
+                    <ul class="services-links">
+                        <li><a href="/wedding-photography">Wedding Photography</a></li>
+                        <li><a href="/event-photography">Event Photography</a></li>
+                        <li><a href="/travel-photography">Travel Photography</a></li>
+                        <li><a href="/wildlife-photography">Wildlife Photography</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="col-md-2 col-sm-12">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 col-sm-12">
+                    <h5>Contact Info</h5>
+                    <ul>
+                        <li><a href="tel:+91 9673209162"><b>Phone:</b> +91 9673209162</a></li>
+                        <li><a href="samphotography@gmail.com"><b>Email:</b> samphotography@gmail.com</a></li>
+                        <li><b>Location:</b> Pimple Gurav, Pimpri Chinchwad, Pune. Sangvi has a pincode of 411061.</li>
+                    </ul>
+
+                    <!-- Social Media Links Below Contact Info -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/samphotography" target="_blank" title="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/samphotography" target="_blank" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/samphotography" target="_blank" title="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/samphotography" target="_blank" title="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sam Photography. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const images = {
+            wildlife: [
+                "https://via.placeholder.com/300x200/007bff/ffffff?text=Wildlife+1",
+                "https://via.placeholder.com/300x200/28a745/ffffff?text=Wildlife+2",
+                "https://via.placeholder.com/300x200/17a2b8/ffffff?text=Wildlife+3",
+                "https://via.placeholder.com/300x200/ffc107/ffffff?text=Wildlife+4",
+                "https://via.placeholder.com/300x200/6c757d/ffffff?text=Wildlife+5"
+            ],
+            street: [
+                "https://via.placeholder.com/300x200/007bff/ffffff?text=Street+1",
+                "https://via.placeholder.com/300x200/28a745/ffffff?text=Street+2",
+                "https://via.placeholder.com/300x200/17a2b8/ffffff?text=Street+3",
+                "https://via.placeholder.com/300x200/ffc107/ffffff?text=Street+4",
+                "https://via.placeholder.com/300x200/6c757d/ffffff?text=Street+5"
+            ],
+            food: [
+                "https://via.placeholder.com/300x200/007bff/ffffff?text=Food+1",
+                "https://via.placeholder.com/300x200/28a745/ffffff?text=Food+2",
+                "https://via.placeholder.com/300x200/17a2b8/ffffff?text=Food+3",
+                "https://via.placeholder.com/300x200/ffc107/ffffff?text=Food+4",
+                "https://via.placeholder.com/300x200/6c757d/ffffff?text=Food+5"
+            ],
+            travel: [
+                "https://via.placeholder.com/300x200/007bff/ffffff?text=Travel+1",
+                "https://via.placeholder.com/300x200/28a745/ffffff?text=Travel+2",
+                "https://via.placeholder.com/300x200/17a2b8/ffffff?text=Travel+3",
+                "https://via.placeholder.com/300x200/ffc107/ffffff?text=Travel+4",
+                "https://via.placeholder.com/300x200/6c757d/ffffff?text=Travel+5"
+            ],
+            all: [
+                "https://via.placeholder.com/300x200/007bff/ffffff?text=Wildlife+1",
+                "https://via.placeholder.com/300x200/28a745/ffffff?text=Street+2",
+                "https://via.placeholder.com/300x200/17a2b8/ffffff?text=Food+3",
+                "https://via.placeholder.com/300x200/ffc107/ffffff?text=Travel+4",
+                "https://via.placeholder.com/300x200/6c757d/ffffff?text=Wildlife+5"
+            ]
+        };
+
+        function openGallery(category) {
+            const gallery = document.getElementById('gallery-display');
+            gallery.innerHTML = ''; // Clear previous gallery
+
+            let categoryImages = images[category] || [];
+
+            categoryImages.forEach(src => {
+                const imgDiv = document.createElement('div');
+                imgDiv.classList.add('col-md-4', 'mb-4');
+                imgDiv.innerHTML = `
+                <div class="gallery-item">
+                    <img src="${src}" alt="${category} photography" class="img-fluid">
+                </div>
+            `;
+                gallery.appendChild(imgDiv);
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+
+</html>
+
+
+
